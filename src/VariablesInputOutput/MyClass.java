@@ -2,10 +2,9 @@ package VariablesInputOutput;
 
 public class MyClass {
     public static void main(String[] args) {
-        if (args.length > 0) {
-            System.out.println("Arguments passed");
-        } else {
-            System.out.println("Argument not passed");
-        }
+        int money=2000;
+        System.out.println(money);
+        money=5000;
+        System.out.println(money);
     }
 }
