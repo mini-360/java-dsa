@@ -46,7 +46,6 @@ public class SquareArray {
     }
 
 
-
     void reverse(int[] arr) {
         int left = 0, right = arr.length - 1;
         while (left < right) {
