@@ -14,7 +14,7 @@ public class SubsequenceSum {
     public void subsetSum(int[] arr, int idx, int currSum) {
         int n = arr.length;
         if (idx >= n) {
-            System.out.print(currSum+" ");
+            System.out.print(currSum + " ");
             return;
         }
         subsetSum(arr, idx + 1, currSum + arr[idx]);
