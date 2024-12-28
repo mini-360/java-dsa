@@ -20,7 +20,7 @@ public class LetterCombinations {
             return;
         }
 
-        int currNum = digits.charAt(0) - '0'; 
+        int currNum = digits.charAt(0) - '0';
         String currChoices = keyCode[currNum];
 
         for (int i = 0; i < currChoices.length(); i++) {
