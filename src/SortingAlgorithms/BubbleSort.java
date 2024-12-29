@@ -18,8 +18,16 @@ public class BubbleSort {
         for (int i : arr) {
             System.out.print(i + " ");
         }
+
+        bs.optimizedBubbleSort(arr);
+        System.out.println();
+        System.out.println("Array after sorting : ");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
     }
 
+    // Brute Force
     public void bubbleSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
@@ -31,6 +39,25 @@ public class BubbleSort {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
+            }
+        }
+    }
+
+    // Optimized
+    public void optimizedBubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            boolean flag = false; // has any swapping happened
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    flag = true; // some swap has happened
+                }
+            }
+            if (!flag) {
+                return;
             }
         }
     }
