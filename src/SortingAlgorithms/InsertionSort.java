@@ -10,7 +10,7 @@ public class InsertionSort {
         System.out.println();
 
         InsertionSort is = new InsertionSort();
-        is.insertionSort(arr);  
+        is.insertionSort(arr);
         System.out.println("Sorted Array : ");
         for (int i : arr) {
             System.out.print(i + " ");
@@ -23,7 +23,7 @@ public class InsertionSort {
             int j = i;
             while (j > 0 && arr[j] < arr[j - 1]) {
                 //swap arr[j] and arr[j-1]
-                swap(arr, j, j - 1);
+                swap(arr, j, j - 1); 
                 j--;
             }
         }
