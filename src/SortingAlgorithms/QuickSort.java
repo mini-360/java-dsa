@@ -2,7 +2,7 @@ package SortingAlgorithms;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = {6, 3, 1, 5, 4};
+        int[] arr = {6, 6, 3, 1, 5, 4};
 
         QuickSort qs = new QuickSort();
 
