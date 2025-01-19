@@ -10,8 +10,38 @@ public class CountSort {
         countSort(arr);
         System.out.println("Array after sorting : ");
         display(arr);
+        System.out.println();
+        optimizedCountSort(arr);
+        display(arr);
 
 
+    }
+    // Optimized count sort
+
+    public static void optimizedCountSort(int[] arr) {
+        int n = arr.length;
+        int[] output = new int[n];
+        int max = maxInArray(arr); // find the largest element of the arr
+        int[] freqArr = new int[max + 1];
+        for (int val : arr) { // Make frequency array
+            freqArr[val]++;
+        }
+        // Make prefix sum array of freqArr
+        for (int i = 1; i < freqArr.length; i++) {
+            freqArr[i] += freqArr[i - 1];
+        }
+
+        // Find the index of each element in the original array and put it in output array
+        for (int i = n - 1; i >= 0; i--) {
+            int idx = freqArr[arr[i]] - 1;
+            output[idx] = arr[i];
+            freqArr[arr[i]]--;
+        }
+
+        // Copy all elements of output to arr
+        for (int i = 0; i < n; i++) {
+            arr[i] = output[i];
+        }
     }
 
     public static void countSort(int[] arr) {
