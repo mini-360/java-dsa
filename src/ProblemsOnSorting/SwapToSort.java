@@ -14,6 +14,9 @@ public class SwapToSort {
 
     public static void sortArray(int[] arr) {
         int n = arr.length;
+        if (n <= 1) {
+            return;
+        }
         int x = -1, y = -1;
         for (int i = 1; i < n; i++) {
             if (arr[i - 1] > arr[i]) {
