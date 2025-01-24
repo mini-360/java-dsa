@@ -13,7 +13,7 @@ public class Sort01And2 {
 
     public static void sortZeroes(int[] arr) {
         int low = 0, mid = 0, high = arr.length - 1;
-        while (mid < high) {
+        while (mid <= high) {
             if (arr[mid] == 0) {
                 swap(arr, mid, low);
                 low++;
