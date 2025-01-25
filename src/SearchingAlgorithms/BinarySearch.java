@@ -21,6 +21,12 @@ public class BinarySearch {
 
     }
 
+
+    /*
+    instead of using int mid=(st+end)/2;
+    we can use int mid=st+(end-st)/2;
+     */
+
     //  Using for loop
     public static boolean binarySearchLoop(int[] arr, int target) {
         int n = arr.length;
