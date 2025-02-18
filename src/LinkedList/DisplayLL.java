@@ -27,21 +27,36 @@ public class DisplayLL {
         displayIterative(a);
         System.out.println();
         displayRecursively(a);
+        int ans=size(a);
+        System.out.println();
+        System.out.println(ans);
     }
-    public static void displayIterative(Node head){
-        Node temp=head;
-        while (temp!=null){
-            System.out.print(temp.data+" ");
-            temp=temp.next;
+
+    public static void displayIterative(Node head) {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
         }
     }
-    public static void displayRecursively(Node head){
-        Node temp=head;
-        if (temp==null){
+
+    public static void displayRecursively(Node head) {
+        Node temp = head;
+        if (temp == null) {
             return;
         }
-        System.out.print(temp.data+" ");
+        System.out.print(temp.data + " ");
         displayRecursively(temp.next);
+    }
+
+    public static int size(Node head){
+        Node temp=head;
+        int count=0;
+        while (temp!=null){
+            count++;
+            temp=temp.next;
+        }
+        return count;
     }
 
 }

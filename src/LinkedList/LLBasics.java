@@ -26,5 +26,9 @@ public class LLBasics {
         d.next = e;// 5->3->9->8->16
         e.next = null; // 5->3->9->8->16->null
 
+        System.out.println(a);
+        System.out.println(a.next);
+        System.out.println(a);
+        System.out.println(b);
     }
 }
