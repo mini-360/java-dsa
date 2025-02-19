@@ -7,20 +7,24 @@ public class ImplementLL {
         ll.insertAtEnd(8);
         ll.insertAtEnd(12);
 
-        ll.display();
-        System.out.println(ll.size()); // 5->8->12
+//        ll.display();
+//        System.out.println(ll.size); // 5->8->12
 
         ll.insertAtBeginning(45);
 
-        ll.display();
-        System.out.println(ll.size()); // 45->5->8->12
+//        ll.display();
+//        System.out.println(ll.size); // 45->5->8->12
 
         ll.insertAt(0, 5);
-        ll.display();
+//        ll.display();
         ll.insertAt(2, 10);
-        ll.display(); //5->45->10->5->8->12
+//        ll.display(); //5->45->10->5->8->12
         ll.insertAt(6, 17);
         ll.display(); //5->45->10->5->8->12->17
+//        System.out.println(ll.tail.data);
+//        System.out.println(ll.getAt(1));
+        ll.deleteAt(0);
+        ll.display();
         System.out.println(ll.tail.data);
 
 
@@ -35,14 +39,42 @@ public class ImplementLL {
         }
     }
 
+
     public static class LinkList {
         Node head = null;
         Node tail = null;
+        int size = 0;
+
+        void deleteAt(int idx) {
+            Node temp = head;
+            if (idx==0){
+                head=head.next;
+                size--;
+                return;
+            }
+            for (int i=0;i<(idx-1);i++){
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            tail=temp;
+            size--;
+        }
+
+        int getAt(int idx) {
+            Node temp = head;
+            if (idx < 0 || idx > size) {
+                return -1;
+            }
+            for (int i = 0; i < idx; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
 
         void insertAt(int idx, int data) {
             Node newNode = new Node(data);
             Node temp = head;
-            if (idx < 0 || idx > size()) {
+            if (idx < 0 || idx > size) {
                 System.out.println("Enter valid Index");
                 return;
             }
@@ -50,7 +82,7 @@ public class ImplementLL {
                 insertAtBeginning(data);
                 return;
             }
-            if (idx == size()) {
+            if (idx == size) {
                 insertAtEnd(data);
                 return;
             }
@@ -59,6 +91,7 @@ public class ImplementLL {
             }
             newNode.next = temp.next;
             temp.next = newNode;
+            size++;
         }
 
         void insertAtBeginning(int data) {
@@ -70,6 +103,7 @@ public class ImplementLL {
                 temp.next = head;
                 head = temp;
             }
+            size++;
         }
 
         void insertAtEnd(int data) {
@@ -80,6 +114,7 @@ public class ImplementLL {
                 tail.next = temp;
             }
             tail = temp;
+            size++;
         }
 
         void display() {
@@ -89,16 +124,6 @@ public class ImplementLL {
                 temp = temp.next;
             }
             System.out.println();
-        }
-
-        int size() {
-            Node temp = head;
-            int count = 0;
-            while (temp != null) {
-                count++;
-                temp = temp.next;
-            }
-            return count;
         }
     }
 }

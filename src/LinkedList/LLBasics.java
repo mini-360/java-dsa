@@ -26,9 +26,25 @@ public class LLBasics {
         d.next = e;// 5->3->9->8->16
         e.next = null; // 5->3->9->8->16->null
 
-        System.out.println(a);
-        System.out.println(a.next);
-        System.out.println(a);
-        System.out.println(b);
+        display(a);
+        insertAtEnd(a,87);
+        display(a);
+    }
+    public static void insertAtEnd(Node head,int data){
+        Node newNode=new Node(data);
+        Node temp=head;
+        while (temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=newNode;
+
+    }
+    public static void display(Node head){
+        Node temp=head;
+        while (temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+        System.out.println();
     }
 }
