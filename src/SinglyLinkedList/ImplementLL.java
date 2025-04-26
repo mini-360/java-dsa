@@ -1,4 +1,4 @@
-package LinkedList;
+package SinglyLinkedList;
 
 public class ImplementLL {
     public static void main(String[] args) {
